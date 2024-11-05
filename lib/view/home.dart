@@ -25,12 +25,16 @@ class HomePage extends StatelessWidget {
             children: [
               const TopBanner(),
               HorizondalListview(
+                heights: 160,
+                widths: 120,
                 imageUrls: ApiKey.productimg,
                 title: 'Our Brands',
               ),
 
               // Suggested for you section
               HorizondalListview(
+                heights: 200,
+                widths: 150,
                 imageUrls: ApiKey.categories,
                 title: 'Suggested for you',
               ),
@@ -45,43 +49,48 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   HorizondalListview(
+                    heights: 200,
+                    widths: 150,
                     imageUrls: ApiKey.productimg,
                     title: 'Best seller',
                   ),
                   // Trending Categories section
                   HorizondalListview(
+                    heights: 160,
+                    widths: 120,
                     imageUrls: ApiKey.productimg,
                     title: 'Trending Categories',
                   ),
                   const Padding(
                     padding: EdgeInsets.all(10),
                   ),
-                  SizedBox(
-                    height: 180,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          width: 120,
-                          margin: const EdgeInsets.symmetric(horizontal: 8.0),
-                          decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            borderRadius:
-                                BorderRadius.circular(15), 
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(
-                                15),
-                            child: Image.network(
-                              ApiKey.categories,
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) =>
-                                  const Icon(Icons.error),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      height: 160,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 5,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            width: 120,
+                            margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[200],
+                              borderRadius: BorderRadius.circular(15),
                             ),
-                          ),
-                        );
-                      },
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.network(
+                                ApiKey.categories,
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) =>
+                                    const Icon(Icons.error),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                   const Padding(
