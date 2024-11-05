@@ -22,7 +22,7 @@ class _BottombarScreenState extends State<BottombarScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: _pages[_currentIndex], // Displaying the current page
+        body: _pages[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (index) {
@@ -30,7 +30,7 @@ class _BottombarScreenState extends State<BottombarScreen> {
               _currentIndex = index;
             });
           },
-          type: BottomNavigationBarType.fixed, // Enables more than 3 items
+          type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined),

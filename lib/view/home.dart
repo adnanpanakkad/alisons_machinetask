@@ -1,4 +1,7 @@
 import 'package:alisons_task/api/api_key.dart';
+import 'package:alisons_task/widgets/home/bottom_banner.dart';
+import 'package:alisons_task/widgets/home/carosel_slider.dart';
+import 'package:alisons_task/widgets/home/center_caroselbanner.dart';
 import 'package:alisons_task/widgets/home_appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -7,26 +10,26 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: const HomeAppbar(),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              //   Banner section
+              // Banner section
               Container(
                 margin: const EdgeInsets.all(8.0),
                 height: 180,
-                color: Colors.grey[300], // Placeholder for banner image
                 child: Image.network(
-                  width: double.infinity,
                   ApiKey.bannerImg,
+                  width: double.infinity,
                   fit: BoxFit.fill,
                   errorBuilder: (context, error, stackTrace) =>
-                      Icon(Icons.error), // Handles any errors in loading
+                      const Icon(Icons.error),
                 ),
               ),
 
-              // Suggested items section
+              // Our Brands section
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
@@ -41,16 +44,21 @@ class HomePage extends StatelessWidget {
                   itemCount: 5,
                   itemBuilder: (context, index) {
                     return Container(
-                      width: 150,
+                      width: 120,
                       margin: const EdgeInsets.symmetric(horizontal: 8.0),
                       color: Colors.grey[200],
-                      child: Center(child: Text("Item ${index + 1}")),
+                      child: Image.network(
+                        ApiKey.productimg,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) =>
+                            const Icon(Icons.error),
+                      ),
                     );
                   },
                 ),
               ),
 
-              // Categories section
+              // Suggested for you section
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
@@ -59,21 +67,93 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 200,
+                height: 180,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
                   itemBuilder: (context, index) {
                     return Container(
-                      width: 150,
+                      width: 120,
                       margin: const EdgeInsets.symmetric(horizontal: 8.0),
                       color: Colors.grey[200],
-                      child: Center(child: Text("Item ${index + 1}")),
+                      child: Image.network(
+                        ApiKey.productimg,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) =>
+                            const Icon(Icons.error),
+                      ),
                     );
                   },
                 ),
               ),
-              
+
+              const CenterCaroselbanner(),
+              // New Container section with two horizontal ListView.builder widgets inside
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      "Best seller",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 180,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 5,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: 120,
+                          margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                          color: Colors.grey[200],
+                          child: Image.network(
+                            ApiKey.productimg,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.error),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+
+                  // Trending Categories section
+                  const Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      "Trending Categories",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 180,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 5,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: 120,
+                          margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                          color: Colors.grey[200],
+                          child: Image.network(
+                            ApiKey.productimg,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.error),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  const BottomBanner(),
+                ],
+              ),
             ],
           ),
         ),
