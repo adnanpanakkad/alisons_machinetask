@@ -10,12 +10,12 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.only(right: 15),
       child: AppBar(
         title: SizedBox(
-          height: 40, // Adjust height to fit your app bar design
+          height: 40, 
           child: Image.asset(
             'assets/Logo 2.png',
             fit: BoxFit.contain,
             errorBuilder: (context, error, stackTrace) =>
-                Icon(Icons.error), // Handles any errors in loading
+                const Icon(Icons.error), 
           ),
         ),
         backgroundColor: Colors.white,
@@ -48,5 +48,5 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize =>
-      const Size.fromHeight(60.0); // Standard app bar height
+      const Size.fromHeight(60.0); 
 }
