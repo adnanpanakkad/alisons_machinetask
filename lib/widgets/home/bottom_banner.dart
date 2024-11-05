@@ -12,11 +12,11 @@ class BottomBanner extends StatelessWidget {
         elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius:
-              BorderRadius.circular(15), // Adjust the radius as needed
+              BorderRadius.circular(15), 
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(
-              15), // Ensures the image also has rounded corners
+              15), 
           child: Image.network(ApiKey.bannerImg),
         ),
       ),

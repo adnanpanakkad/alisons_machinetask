@@ -33,10 +33,10 @@ class HomePage extends StatelessWidget {
 
               // Suggested for you section
               HorizondalListview(
-                heights: 200,
+                heights: 220,
                 widths: 150,
                 imageUrls: ApiKey.categories,
-                title: 'Suggested for you',
+                title: 'Suggested For You',
               ),
               const SizedBox(
                 height: 10,
@@ -49,10 +49,10 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   HorizondalListview(
-                    heights: 200,
+                    heights: 220,
                     widths: 150,
                     imageUrls: ApiKey.productimg,
-                    title: 'Best seller',
+                    title: 'Bestsellers',
                   ),
                   // Trending Categories section
                   HorizondalListview(
@@ -96,7 +96,7 @@ class HomePage extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      "shop exclusive Deals",
+                      "Shop Exclusive Deals",
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),

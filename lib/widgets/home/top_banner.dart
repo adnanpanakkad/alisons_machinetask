@@ -24,9 +24,10 @@ class TopBanner extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomRight,
               child: Container(
-                height: 50,
+                width: 120,
+                height: 40,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 2),
+                  border: Border.all(color: Colors.white, width: 1),
                   borderRadius: BorderRadius.circular(80),
                   color: Colors.transparent,
                 ),

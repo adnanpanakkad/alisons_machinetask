@@ -38,11 +38,11 @@ class HorizondalListview extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 8.0),
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(15), // Rounded edges
+                    borderRadius: BorderRadius.circular(15), 
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(
-                        15), // Match the Container's radius
+                        15), 
                     child: Image.network(
                       imageUrls,
                       fit: BoxFit.cover,
