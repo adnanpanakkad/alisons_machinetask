@@ -3,7 +3,7 @@ import 'package:alisons_task/widgets/home/bottom_banner.dart';
 import 'package:alisons_task/widgets/home/carosel_slider.dart';
 import 'package:alisons_task/widgets/home/horizondal_listview.dart';
 import 'package:alisons_task/widgets/home/top_banner.dart';
-import 'package:alisons_task/widgets/home_appbar.dart';
+import 'package:alisons_task/widgets/home/home_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

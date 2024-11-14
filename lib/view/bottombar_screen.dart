@@ -1,3 +1,4 @@
+import 'package:alisons_task/view/brands_screen.dart';
 import 'package:alisons_task/view/home.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class _BottombarScreenState extends State<BottombarScreen> {
   // List of pages for each bottom bar item
   final List<Widget> _pages = [
     HomePage(), // Updated to use HomePage
-    const Center(child: Text("Brands")),
+    BrandsScreen(),
     const Center(child: Text("Best items")),
     const Center(child: Text("Categories")),
     const Center(child: Text("Account")),
