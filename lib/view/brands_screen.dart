@@ -15,14 +15,14 @@ class BrandsScreen extends StatelessWidget {
         children: [
           Positioned(
             top:
-                -190, // Further increase the negative top value to eliminate gap
+                -190, 
             right: -150,
             child: Container(
               width: 620,
               height: 480,
               decoration: BoxDecoration(
                 color: Colors
-                    .blueAccent, // Match container color with the background
+                    .blueAccent, 
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
